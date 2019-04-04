@@ -4,7 +4,7 @@ pipeline {
   }
   environment {
     ORG = 'anuj'
-    APP_NAME = 'javawebapp3'
+    APP_NAME = 'springbootjava'
     CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
   }
   stages {
@@ -60,7 +60,7 @@ pipeline {
       }
       steps {
         container('maven') {
-          dir('charts/javawebapp3') {
+          dir('charts/springbootjava') {
             sh "jx step changelog --version v\$(cat ../../VERSION)"
 
             // release the helm chart
